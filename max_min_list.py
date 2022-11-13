@@ -6,7 +6,7 @@ n = int(input("Enter number of elements : "))
 
 # iterating till the range
 for i in range(0, n):
-	ele = int(input("enter an interger:"))
+	ele = int(input("please enter an interger :"))
 
 	lst.append(ele) # adding the element
 	
