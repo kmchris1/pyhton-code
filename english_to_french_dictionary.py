@@ -4,21 +4,23 @@
 which_language = input("in which language do you want your sentence to be translated:")
 
 english_to_french={
-"Prune" : "Plum",
-"Moi": "Me",
-"Lit": "Bed",
-"Soleil": "Sun",
-"Computer": "Ordinateur",
-"Africa": "Afrique"
+"prune" : "Plum",
+"moi": "Me",
+"lit": "Bed",
+"soleil": "Sun",
+"computer": "Ordinateur",
+"africa": "Afrique"
 }
 
 if which_language=="french":
-    my_frenchW = input("Enter a word in french. The word must start with a Capital letter\n")
-    translation = english_to_french.get (my_frenchW)
-    if my_frenchW in english_to_french:
+    french_word = input("Enter a word in french. The word must start with a Capital letter\n")
+    french_word= french_word.lower()
+    ## get value from the key received from the user input (which is the Key!!)
+    translation = english_to_french.get(french_word)
+    if french_word in english_to_french:
         print(translation)
-    elif my_frenchW not in  english_to_french: 
-        print(f"{my_frenchW} does not exist in the dictionary")
+    elif french_word not in  english_to_french: 
+        print(f"{french_word} does not exist in the dictionary")
 else:
     print("your language in not avalaible in my dictionary")
 
