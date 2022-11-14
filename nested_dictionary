@@ -1,0 +1,53 @@
+# write a code that will automatically translate an input from a user to ENGLISH.
+# And if that input from user does not exixt in your ditionary, 
+# simply return "input" does not exixt in the dictionary.
+which_language = input("in which language do you want your sentence to be translated:")
+
+language = ["bulgarian", "french"]
+
+english_to_french_bulgary= {
+    "french": {
+        "prune" : "Plum",
+        "moi": "Me",
+        "lit": "Bed",
+        "soleil": "Sun",
+        "ordinateur": "compter",
+        "afrique": "africa"
+},
+    "bulgarian":{
+        "слива" : "Plum",
+        "мои": "Me",
+        "легло": "Bed",
+        "солей": "Sun",
+        "компютър": "ordinateur",
+        "европа": "europe"
+}
+    }
+if which_language in language and which_language=="french":
+    french_word = input("Enter a word in french. The word must start with a Capital letter\n")
+    french_word= french_word.lower()
+    ## get value from the key received from the user input (which is the Key!!)
+## you have 2 dictionaries nested in the main dict. pay attention the dictionary is called "french" and "bulgarian" pay attention THE NAME IS WITH THE "" if you do not use it that way while calling it as below it will not be recognized as a variable!!
+    translation = english_to_french_bulgary["french"].get(french_word)
+
+    if french_word in english_to_french_bulgary["french"]:
+        print(translation)
+        print(f" your word in translated in English is:{translation}")
+
+    elif french_word not in english_to_french_bulgary["french"]: 
+        print(f"{french_word} does not exist in the dictionary")
+
+elif which_language in language and which_language=="bulgarian":
+    
+    bulgarian_word = input("Enter a word in bulgarian. The word must start with a Capital letter\n")
+    french_word= bulgarian_word.lower()
+    ## get value from the key received from the user input (which is the Key!!)
+    translation = english_to_french_bulgary["bulgarian"].get(bulgarian_word)
+    if bulgarian_word in english_to_french_bulgary["bulgarian"]:
+        print(f"your word translated in English is: {translation}")
+    elif bulgarian_word not in english_to_french_bulgary["bulgarian"]: 
+        print(f"{bulgarian_word} does not exist in the dictionary")
+else:
+    print("your language in not avalaible in my dictionary")
+
+
